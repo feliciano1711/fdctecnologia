@@ -139,6 +139,11 @@
             </div>
 
             <div class="form-group">
+                <label for="totalimpostos">Valor total de Impostos</label>
+                <input type="number" id="totalimpostos" placeholder="Valor total de Impostos" readonly>
+            </div>
+
+            <div class="form-group">
                 <label for="valorLiquido">Valor Líquido</label>
                 <input type="number" id="valorLiquido" placeholder="Valor líquido" readonly>
             </div>
@@ -175,6 +180,13 @@
             document.getElementById('campo3').value = campo3.toFixed(2);
             document.getElementById('campo4').value = campo4.toFixed(2);
             document.getElementById('campo5').value = campo5.toFixed(2);
+
+            
+            // Calcula o valor total de impostos
+            let totalimpostos = campo2 + campo3 + campo4 + campo5;
+
+            // Exibe o valor total de impostos
+            document.getElementById('totalimpostos').value = totalimpostos.toFixed(2);
 
             // Calcula o valor líquido
             let valorLiquido = valor1 - campo2 - campo3 - campo4 - campo5;
